@@ -1,0 +1,543 @@
+/*
+Theme Name: ascyt10_child
+Template: ascyt10
+*/
+
+@import url('../ascyt10/style.css');
+
+/* -----------------------------------
+ * Slidebars
+ * Version 0.10.3
+ * http://plugins.adchsm.me/slidebars/
+ *
+ * Written by Adam Smith
+ * http://www.adchsm.me/
+ *
+ * Released under MIT License
+ * http://plugins.adchsm.me/slidebars/license.txt
+ *
+ * -------------------
+ * Slidebars CSS Index
+ *
+ * 001 - Box Model, Html & Body
+ * 002 - Site
+ * 003 - Slidebars
+ * 004 - Animation
+ * 005 - Helper Classes
+ *
+ * ----------------------------
+ * 001 - Box Model, Html & Body
+ */
+
+html, body, #sb-site, .sb-site-container, .sb-slidebar {
+	/* Set box model to prevent any user added margins or paddings from altering the widths or heights. */
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+html, body {
+	width: 100%;
+	overflow-x: hidden; /* Stops horizontal scrolling. */
+}
+
+html {
+	height: 100%; /* Site is as tall as device. */
+}
+
+body {
+	min-height: 100%;
+	height: auto;
+	position: relative; /* Required for static Slidebars to function properly. */
+}
+
+h1 {
+	font-size: 1.4em;
+}
+h2 {
+	font-size: 1.4em;
+}
+h3 {
+	font-size: 1.2em;
+}
+h4 {
+	font-size: 1.2em;
+}
+h5 {
+	font-size: 1em;
+}
+h6 {
+	font-size: 1em;
+}
+
+.small{
+	font-size:0.8em;
+}
+.exsmall{
+	font-size:0.6em;
+}
+.alittlelarge{
+	font-size:1.1em;
+}
+.large{
+	font-size:1.2em;
+}
+.superlarge{
+	font-size:1.4em;
+}
+.ultralarge{
+	font-size:1.6em;
+}
+.superultralarge{
+	font-size:1.8em;
+}
+.pages-title h1,.pages-title h2{
+	font-size:1.4em;
+}
+.pages-title-w h1, .pages-title-w h2 {
+    font-size: 1.4em;
+}
+.lh1 {
+    line-height: 1.5;
+}
+h3.sanbo {
+    margin-right: 0px;
+}
+.services h2 {
+    font-size: 1.4em;
+}
+.services .services-inner h2, .services .services-inner h3,.pages-block .content-title h3, .content-title h4 {
+    font-size: 1.2em;
+}
+.post-content .btn, .main-contents .btn,.post-content a.btn,.main-contents a.btn {
+    width: 280px;
+}
+.post-content .btn span img, .main-contents .btn span img {
+}
+.post-content .bg-brown .btn, .main-contents .bg-brown .btn {
+    width: 260px;
+}
+.pull-right {
+    z-index: 2;
+	width: 100%;
+}
+.scroll-to-top {
+	display: none!important;
+}
+
+.f-menu {
+    display: block;
+}
+a.site-name{
+	display:block;
+	margin:10px 0;
+	max-width: 50px;
+}
+.mf{
+	margin-top:73px;
+}
+.mt-40{
+	margin-top:20px!important;
+}
+.fs-14,.fs-16 {
+    font-size: 1.2em!important;
+}
+.fs-24 {
+    font-size: 1.4em!important;
+}
+table.basic>tbody>tr>th,table.basic>tbody>tr>td,
+table.foot-contact>tbody>tr>th,table.foot-contact>tbody>tr>td,
+table.tbl-top-result>tbody>tr>th,table.tbl-top-result>tbody>tr>td,
+table.flow th,table td,.pages-block table.flow th,.pages-block table.flow td {
+    width: 100%;
+    display:block;
+}
+table.cont-table>tbody>tr>td {
+    border-left: 0px;
+}
+table.foot-contact img{
+	width:30px;
+}
+table.foot-contact td, table.flow td, table.flow th {
+    padding: 5px 10px 10px;
+}
+.bg-dosen{
+	padding-bottom:20px;
+}
+.pages-block table.basic th{
+	background-color:#dddddd;
+}
+table.foot-contact>tbody>tr>td{
+    text-align:center;
+}
+table.tbl-top-result>tbody>tr>td.tbl-slash{
+	display:none;
+}
+table.tbl-top-result tr{
+	border-bottom:1px dotted #000000;
+}
+table.tbl-top-result td a {
+    font-size: 1.2em;
+}
+table.tbl-top-result td a:hover {
+    color: #000000!important;
+    text-decoration:underline;
+}
+table.foot-contact .fs-24{
+    font-size: 1.4em!important;
+}
+.main-contents {
+    padding-top: 10px;
+}
+.pages-title {
+    margin: 10px auto;
+}
+.bg-extra-menu {
+    background: #603813;
+}
+.bg-extra-menu .col-sm-3{
+	margin-bottom:10px;
+}
+.services .services-inner {
+    padding: 10px;
+}
+.p-30 {
+    padding: 10px!important;
+}
+.ml-40 {
+    margin-left: 20px;
+    margin-right:10px;
+}
+.form-width  { max-width: 80%;}
+
+.wpcf7c-elm-step1.white-box .mt-30{
+	margin-top:0px!important;
+}
+
+
+/* Site scroll locking - prevent site from scrolling when a Slidebar is open, except when static Slidebars are only available. */
+html.sb-scroll-lock.sb-active:not(.sb-static) {
+	overflow: hidden;
+}
+header{
+	position:fixed;
+	width: 100%;
+    background-color: white!important;
+    z-index: 999;
+}
+
+/* ----------
+ * 002 - Site
+ */
+
+#sb-site, .sb-site-container {
+	/* You may now use class .sb-site-container instead of #sb-site and use your own id. However please make sure you don't set any of the following styles any differently on your id. */
+	width: 100%;
+	min-height: 100vh;
+	position: relative;
+	z-index: 1; /* Site sits above Slidebars */
+	background-color: #ffffff; /* Default background colour, overwrite this with your own css. I suggest moving your html or body background styling here. Making this transparent will allow the Slidebars beneath to be visible. */
+}
+
+/* Micro clearfix by Nicolas Gallagher, ensures the site container hits the top and bottom of the screen. */
+#sb-site:before, #sb-site:after, .sb-site-container:before, .sb-site-container:after {
+	content: ' ';
+	display: table;
+}
+
+#sb-site:before, #sb-site:after, .sb-site-container:before, .sb-site-container:after {
+    clear: both;
+}
+.mm-page {
+    -webkit-transition: -webkit-transform 0.4s ease;
+    transition: transform 0.4s ease;
+}
+.sb-toggle-right{
+	float:right;
+	font-size: 40px;
+}
+.sb-toggle-right a{
+	color:#000000;
+}
+
+/* ---------------
+ * 003 - Slidebars
+ */
+
+.sb-slidebar {
+	height: 100%;
+	overflow-y: auto; /* Enable vertical scrolling on Slidebars when needed. */
+	position: fixed;
+	top: 0;
+	z-index: 0; /* Slidebars sit behind sb-site. */
+	display: none; /* Initially hide the Slidebars. Changed from visibility to display to allow -webkit-overflow-scrolling. */
+	background-color: #222222; /* Default Slidebars background colour, overwrite this with your own css. */
+}
+
+.sb-slidebar, .sb-slidebar * {
+	-webkit-transform: translateZ( 0px ); /* Fixes issues with translated and z-indexed elements on iOS 7. */
+}
+
+.sb-left {
+	left: 0; /* Set Slidebar to the left. */
+}
+
+.sb-right {
+	right: 0; /* Set Slidebar to the right. */
+}
+
+html.sb-static .sb-slidebar,
+.sb-slidebar.sb-static {
+	position: absolute; /* Makes Slidebars scroll naturally with the site, and unfixes them for Android Browser < 3 and iOS < 5. */
+}
+
+.sb-slidebar.sb-active {
+	display: block; /* Makes Slidebars visibile when open. Changed from visibility to display to allow -webkit-overflow-scrolling. */
+}
+
+.sb-style-overlay {
+	z-index: 9999; /* Set z-index high to ensure it overlays any other site elements. */
+}
+
+.sb-momentum-scrolling {
+	-webkit-overflow-scrolling: touch; /* Adds native momentum scrolling for iOS & Android devices. */
+}
+ul.sb-menu {
+    margin-left: 20px;
+}
+ul.sb-menu ul {
+    margin-left: 0px;
+}
+ul.sb-menu li{
+	display:block;
+	padding-left: 10px;
+    text-indent: -10px;
+}
+ul#headernavigation>li>a {
+    height: 50px;
+    line-height: 50px;
+}
+ul#headernavigation li a {
+    padding: 0px;
+    color: #FFFFFF;
+    display: block;
+    margin: 0px 7px;
+}
+ul#headernavigation>li>ul>li>a {
+    padding: 0px 15px 0 25px;
+    border-bottom: 0;
+}
+
+
+footer ul#menu-footermenu li a,footer ul#menu-footermenu2 li a{
+    color: #000000;
+}
+ul#headernavigation>li:after, footer ul#menu-footermenu li:after, footer ul#menu-footermenu2 li:after {
+    content: "";
+}
+footer ul#menu-footermenu li, footer ul#menu-footermenu2 li{
+	display:block;
+}
+
+/* Slidebar widths for browsers/devices that don't support media queries. */
+	.sb-slidebar {
+		width: 30%;
+	}
+
+	.sb-width-thin {
+		width: 15%;
+	}
+
+	.sb-width-wide {
+		width: 45%;
+	}
+
+
+
+@media (max-width: 480px) { /* Slidebar widths on extra small screens. */
+	.sb-slidebar {
+		width: 80%;
+	}
+
+	.sb-width-thin {
+		width: 55%;
+	}
+
+	.sb-width-wide {
+		width: 85%;
+	}
+}
+
+@media (min-width: 481px) { /* Slidebar widths on small screens. */
+	.sb-slidebar {
+		width: 55%;
+	}
+
+	.sb-width-thin {
+		width: 40%;
+	}
+
+	.sb-width-wide {
+		width: 70%;
+	}
+}
+
+@media (min-width: 768px) { /* Slidebar widths on medium screens. */
+	.sb-slidebar {
+		width: 40%;
+	}
+
+	.sb-width-thin {
+		width: 25%;
+	}
+
+	.sb-width-wide {
+		width: 55%;
+	}
+}
+
+@media (min-width: 992px) { /* Slidebar widths on large screens. */
+	.sb-slidebar {
+		width: 30%;
+	}
+
+	.sb-width-thin {
+		width: 15%;
+	}
+
+	.sb-width-wide {
+		width: 45%;
+	}
+}
+
+@media (min-width: 1200px) { /* Slidebar widths on extra large screens. */
+	.sb-slidebar {
+		width: 20%;
+	}
+
+	.sb-width-thin {
+		width: 5%;
+	}
+
+	.sb-width-wide {
+		width: 35%;
+	}
+}
+
+/* ---------------
+ * 004 - Animation
+ */
+
+.sb-slide, #sb-site, .sb-site-container, .sb-slidebar {
+
+	-webkit-transition: -webkit-transform 400ms ease;
+	   -moz-transition:    -moz-transform 400ms ease;
+	     -o-transition:      -o-transform 400ms ease;
+	        transition:         transform 400ms ease;
+
+	-webkit-transition-property: -webkit-transform, left, right; /* Add left/right for Android < 4.4. */
+	-webkit-backface-visibility: hidden; /* Prevents flickering. This is non essential, and you may remove it if your having problems with fixed background images in Chrome. */
+}
+
+/* --------------------
+ * 005 - Helper Classes
+ */
+
+.sb-hide {
+	display: none; /* Optionally applied to control classes when Slidebars is disabled over a certain width. */
+}
+
+
+/* custom */
+#mv-visual,#recruit-visual,#interview-visual{
+	margin-top:72px;
+	padding-bottom: 0px;
+}
+#mv-visual{
+	height:200px;
+}
+#recruit-visual .main-txt{
+	font-size: 1.6em;
+}
+#mv-visual .main-txt{
+	padding:10px;
+}
+#mv-visual .main-txt img {
+    display: block;
+    padding-top: 10px;
+}
+#normal-visual {
+	margin-top:72px;
+}
+header .div_hd-submenu {
+    margin-top: 20px;
+}
+
+@media screen and (max-width: 767px) {
+	.pctablet{
+		display: none!important;
+	}
+	.onlysmart{
+		display:block!important;
+	}
+
+	ul.slides .caption{
+		display:none;
+	}
+	table#tokui td {
+		width:100%;
+		display:block;
+	}
+	#tophito-visual {
+		height:360px;
+	}
+	#tophito-visual .tophito-container{
+		padding-top:43px;
+	}
+	table.foot-news td{
+		width:100%;
+		display:block;
+	}
+	#normal-visual {
+	    height: 200px;
+	}
+	#normal-visual .main-txt {
+	    padding-top: 0px;
+	}
+	#normal-visual .main-txt h1{
+	    font-size:20px;
+	}
+	#normal-visual .main-txt h1 span.small{
+	    font-size:16px;
+	}
+	#normal-visual .main-txt h2{
+	    font-size:12px;
+	}
+
+	.graytable-img1_3 {
+	    width: 350px;
+	}
+	.graytable-img2 {
+	    width: 350px;
+	}
+
+	#interview-visual {
+	    height: 300px;
+	}
+	table.guideline th,table.guideline td{
+		width:100%;
+		display:block;
+	}
+	table.guideline th{
+		background-color:#cccccc;
+	}
+	.pages-title h1.h1_post, .pages-title h2.h1_post {
+	    line-height: 1.6;
+	    font-size: 1.4em;
+	}
+	.box-black td.tbl_cl {
+	    width: 40%;
+	}
+}
