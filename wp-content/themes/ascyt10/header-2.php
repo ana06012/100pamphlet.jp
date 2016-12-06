@@ -8,23 +8,6 @@ global $postname;
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<?php if(is_front_page()){ ?>
-<!-- Google Analytics Content Experiment code -->
-<script>function utmx_section(){}function utmx(){}(function(){var
-k='84285528-9',d=document,l=d.location,c=d.cookie;
-if(l.search.indexOf('utm_expid='+k)>0)return;
-function f(n){if(c){var i=c.indexOf(n+'=');if(i>-1){var j=c.
-indexOf(';',i);return escape(c.substring(i+n.length+1,j<0?c.
-length:j))}}}var x=f('__utmx'),xx=f('__utmxx'),h=l.hash;d.write(
-'<sc'+'ript src="'+'http'+(l.protocol=='https:'?'s://ssl':
-'://www')+'.google-analytics.com/ga_exp.js?'+'utmxkey='+k+
-'&utmx='+(x?x:'')+'&utmxx='+(xx?xx:'')+'&utmxtime='+new Date().
-valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
-'" type="text/javascript" charset="utf-8"><\/sc'+'ript>')})();
-</script><script>utmx('url','A/B');</script>
-<!-- End of Google Analytics Content Experiment code -->
-<?php } ?>
-
 
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width">
@@ -125,7 +108,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 
 			<?php if(is_front_page() || is_page('1142') || is_page('2')){ ?>
 			<div id="mv-visual">
-				<div class="main-txt"><img src="<?php echo get_template_directory_uri(); ?>/images/background/txt-main_2016.png" alt="厳選プロデザイナー100人がコンペでパンフレットを平均6.8提案します"></div>
+				<div class="main-txt testb"><img src="<?php echo get_template_directory_uri(); ?>/images/background/main_mv_2.png" alt="100人のデザイナーで最強のパンフレットを作る"></div>
 			</div>
 			<?php } ?>
 			<section class="bt-gray">
@@ -133,7 +116,7 @@ valueOf()+(h?'&utmxhash='+escape(h.substr(1)):'')+
 					<div class="row">
 						<div class="col-sm-12">
 							<?php wp_nav_menu( array('menu'  => 'mainMenu', 'container' => 'nav','container_id' => 'menu','container_class' => 'nav-main mega-menu top', 'menu_id' => 'headernavigation','menu_class' => 'nav nav-pills nav-main navbar-nav' ) ); ?>
- 							<ul class="hd-submenu largepc"><li><a href="http://chat.100pamphlet.jp/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/nav/txt-login.png" alt="ログイン" /></a></li></ul>
+							<ul class="hd-submenu"><li><a href="http://chat.100pamphlet.jp/" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/nav/txt-login.jpg" alt="ログイン" /></a></li></ul>
 						</div>
 					</div><!-- /.row -->
 				</div><!-- /.container -->

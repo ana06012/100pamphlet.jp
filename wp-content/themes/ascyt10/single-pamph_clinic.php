@@ -115,7 +115,7 @@ get_header(); ?>
 
 				</div>
 
-				<div class="col-sm-3">
+				<div class="col-sm-3 pt-40">
 				<?php get_sidebar('page'); ?>
 				</div>
 			</div>

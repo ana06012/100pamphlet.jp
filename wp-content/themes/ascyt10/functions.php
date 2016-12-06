@@ -252,6 +252,15 @@ function twentytwelve_widgets_init() {
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
+	register_sidebar( array(
+			'name' => 'lab sidebar',
+			'id' => 'sidebar-2',
+			'description' => __( 'Appears on posts and pages except the optional Front Page template, which has its own widgets', 'twentytwelve' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget' => '</aside>',
+			'before_title' => '<h3 class="widget-title">',
+			'after_title' => '</h3>',
+	) );
 
 }
 add_action( 'widgets_init', 'twentytwelve_widgets_init' );
@@ -880,7 +889,7 @@ function create_post_type() {
 			'rewrite' => true,
 			'hierarchical' => false,
 			'supports' => array('title','thumbnail'),
-			'menu_position' =>30,
+			'menu_position' =>35,
 			'has_archive' => true,
 			'rewrite' => array(
 				'slug' => 'designer','with_front' => false)
@@ -910,7 +919,7 @@ function create_post_type() {
 			'rewrite' => true,
 			'hierarchical' => false,
 			'supports' => array('title','editor'),
-			'menu_position' =>35,
+			'menu_position' =>40,
 			'has_archive' => true,
 			'rewrite' => array(
 				'slug' => 'faq','with_front' => false)
@@ -961,7 +970,7 @@ function create_post_type() {
 			'rewrite' => true,
 			'hierarchical' => false,
 			'supports' => array('title','editor','thumbnail'),
-			'menu_position' =>40,
+			'menu_position' =>45,
 			'has_archive' => true,
 			'rewrite' => array(
 				'slug' => 'design_company','with_front' => false)
@@ -987,6 +996,57 @@ function create_post_type() {
 		'query_var' => true,
 		'rewrite' => array(
 			'slug' => 'design_company','with_front' => true)
+	));
+
+
+	register_post_type( 'lab', /* post-type */
+			array(
+					'labels' => array(
+							'name' => __( 'パンフレットデザインラボ' ),
+							'singular_name' => __( 'パンフレットデザインラボ' ),
+							'all_items' => 'パンフレットデザインラボ一覧',
+							'add_new' => 'パンフレットデザインラボ追加',
+							'add_new_item' => 'パンフレットデザインラボの追加',
+							'edit_item' => 'パンフレットデザインラボの編集',
+							'new_item' => 'パンフレットデザインラボ追加',
+							'view_item' => 'パンフレットデザインラボを表示',
+							'search_items' => 'パンフレットデザインラボを検索',
+							'not_found' =>  'パンフレットデザインラボが見つかりません',
+							'not_found_in_trash' => 'ゴミ箱内にパンフレットデザインラボが見つかりませんでした。',
+							'parent_item_colon' => ''
+					),
+					'public' => true,
+					'publicly_queryable' => true,
+					'show_ui' => true,
+					'query_var' => true,
+					'rewrite' => true,
+					'hierarchical' => false,
+					'supports' => array('title','thumbnail'),
+					'menu_position' =>30,
+					'has_archive' => true,
+					'rewrite' => array(
+							'slug' => 'lab','with_front' => false)
+			)
+			);
+	/* タクソノミー カテゴリ追加 */
+	register_taxonomy('lab_cat','lab', array(
+			'hierarchical' => true,
+			'labels' => array(
+					'name' => 'カテゴリ',
+					'singular_name' => 'カテゴリ',
+					'search_items' =>  'カテゴリを検索',
+					'all_items' => 'すべてのカテゴリ',
+					'parent_item' => '親分類',
+					'parent_item_colon' => '親分類：',
+					'edit_item' => '編集',
+					'update_item' => '更新',
+					'add_new_item' => 'カテゴリを追加',
+					'new_item_name' => '名前',
+			),
+			'show_ui' => true,
+			'query_var' => true,
+			'rewrite' => array(
+					'slug' => 'lab','with_front' => true)
 	));
 
 }
@@ -1309,7 +1369,7 @@ function display_result($atts) {
 
 			$permalink_html = '<a href="'.get_the_permalink($post).'" >'.get_the_title($post).'</a>';
 
-			$html_top_result .= '<div class="col-xs-6 col-sm-4">';
+			$html_top_result .= '<div class="col-xs-6 col-md-4">';
 			$html_top_result .= '<a href="'.get_the_permalink($post).'" ><img src="'.$image_url_hon.'" /></a>
 			<div class="result-box-150">
 				<span class="orange-icon"><a href="'.$post_type_link.'result/">'.$post_type_name.'</a></span><br>
@@ -1419,7 +1479,9 @@ function make_menu_current( $classes, $item ) {
 	    	$classes[] = 'pamph_recruit-page';
 	    }elseif ( 'pamph_school' == get_post_type()  ){
 	    	$classes[] = 'pamph_school-page';
-	    }
+	   	}elseif ( 'lab' == get_post_type()  ){
+			$classes[] = 'lab-page';
+		}
     }
 
     $classes = array_unique( $classes );
@@ -1686,6 +1748,7 @@ add_rewrite_rule('pamph_school/([^/]+)/page/([0-9]+)/?$', 'index.php?pamph_schoo
 add_rewrite_rule('pamph_recruit/([^/]+)/page/([0-9]+)/?$', 'index.php?pamph_recruit_cat=$matches[1]&paged=$matches[2]', 'top'); //2ページ目以降用
 add_rewrite_rule('pamph_clinic/([^/]+)/page/([0-9]+)/?$', 'index.php?pamph_clinic_cat=$matches[1]&paged=$matches[2]', 'top'); //2ページ目以降用
 add_rewrite_rule('web/([^/]+)/page/([0-9]+)/?$', 'index.php?web_cat=$matches[1]&paged=$matches[2]', 'top'); //2ページ目以降用
+add_rewrite_rule('lab/([^/]+)/page/([0-9]+)/?$', 'index.php?lab_cat=$matches[1]&paged=$matches[2]', 'top'); //2ページ目以降用
 
 /* 空文字検索ではHOMEにリダイレクト */
 function empty_search_redirect( $wp_query ) {
@@ -1714,6 +1777,8 @@ function autozip() {
 	wp_enqueue_script( 'autozip', get_template_directory_uri() . '/assets/js/autozip.js' );
 }
 
+/* 画像にsrcsetが埋め込まれるのを削除 */
+add_filter( 'wp_calculate_image_srcset_meta', '__return_null' );
 
 /* WP 本体 更新通知 非表示 */
 add_filter('pre_site_transient_update_core', '__return_zero');

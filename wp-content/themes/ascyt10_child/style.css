@@ -316,20 +316,32 @@ ul.sb-menu li{
     text-indent: -10px;
 }
 ul#headernavigation>li>a {
-    height: 50px;
-    line-height: 50px;
+    height: 40px;
+    line-height: 40px;
 }
 ul#headernavigation li a {
     padding: 0px;
     color: #FFFFFF;
     display: block;
     margin: 0px 7px;
+    font-size:14px;
 }
 ul#headernavigation>li>ul>li>a {
     padding: 0px 15px 0 25px;
     border-bottom: 0;
+	height: 40px;
+	line-height: 40px;
+}
+.result-box a,.lab-title a {
+    font-size: 0.9em;
+}
+#lab-visual .main-txt img {
+    padding-top: 70px;
 }
 
+.pages-title h1.result-title, .pages-title h2.result-title {
+	font-size: 1.6em;
+}
 
 footer ul#menu-footermenu li a,footer ul#menu-footermenu2 li a{
     color: #000000;
@@ -500,7 +512,7 @@ header .div_hd-submenu {
 		width:100%;
 		display:block;
 	}
-	#normal-visual {
+	#normal-visual,#lab-visual {
 	    height: 200px;
 	}
 	#normal-visual .main-txt {
@@ -510,7 +522,7 @@ header .div_hd-submenu {
 	    font-size:20px;
 	}
 	#normal-visual .main-txt h1 span.small{
-	    font-size:16px;
+	    font-size:14px;
 	}
 	#normal-visual .main-txt h2{
 	    font-size:12px;

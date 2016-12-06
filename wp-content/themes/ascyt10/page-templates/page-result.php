@@ -79,7 +79,7 @@ get_header(); ?>
 
 							$permalink_html = '<a href="'.get_the_permalink($post).'" >'.get_the_title($post).'</a>';
 
-							$html_top_result .= '<div class="col-xs-6 col-sm-4">';
+							$html_top_result .= '<div class="col-xs-6 col-md-4">';
 							$html_top_result .= '<a href="'.get_the_permalink($post).'" ><img src="'.$image_url_hon.'" /></a>
 							<div class="result-box-150">
 								<span class="orange-icon"><a href="'.$post_type_link.'result/">'.$post_type_name.'</a></span><br>

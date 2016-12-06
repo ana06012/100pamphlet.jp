@@ -166,7 +166,7 @@ h1 .small,h2 .small,h3 .small,h4 .small,h5 .small,h6 .small{
 	color:#000000;
 	margin-bottom: 5px;
 	line-height: 1.5;
-	font-size:2.2em;
+	font-size:2.0em;
 }
 .pages-title h1 span,.pages-title h2 span{
 	color:#000000;
@@ -183,7 +183,7 @@ h1 .small,h2 .small,h3 .small,h4 .small,h5 .small,h6 .small{
 	color:#ffffff;
 	margin-bottom: 5px;
 	line-height: 1.5;
-	font-size:2.2em;
+	font-size:2.0em;
 }
 .pages-title-w h1 span,.pages-title-w h2 span{
 	color:#FFFFFF;
@@ -339,7 +339,8 @@ ul.contact-list{
 .navbar-nav li.menu-item-object-pamph_company.pamph_company-page a,
 .navbar-nav li.menu-item-object-pamph_clinic.pamph_clinic-page a,
 .navbar-nav li.menu-item-object-pamph_school.pamph_school-page a,
-.navbar-nav li.menu-item-object-pamph_recruit.pamph_recruit-page a{
+.navbar-nav li.menu-item-object-pamph_recruit.pamph_recruit-page a,
+.navbar-nav li.menu-item-object-lab.lab-page a{
 	background-color:#3e3e3e;
 	color:#FFFFFF;
 }
@@ -390,7 +391,7 @@ header nav#menu{
 	float: left;
 }
 ul#headernavigation>li>a{
-	padding: 0px 25px;
+	padding: 0px 15px;
     margin: 0px;
     display: block;
     height: 60px;
@@ -450,7 +451,7 @@ header .hd-submenu td a:hover{
 	-ms-filter: "alpha( opacity=70 )";
 }
 header .hd-submenu td.hd-tel a span img{
-	background-color:transparent;
+	background-color:#FF0000;
 	margin-bottom:2px;
 }
 header .hd-submenu li.hd-tel{
@@ -595,6 +596,10 @@ h2.bl-orange{
 	color:#000000;
 	padding-left: 10px;
 }
+.side-menu .bg-black h3,.side-banner .bg-black h3{
+	font-size: 1.0em;
+}
+
 .tel-black-icon {
     font-size: 0.7em;
 }
@@ -1157,6 +1162,25 @@ h3.popular-faq-title{
 	text-decoration:underline;
 }
 
+.side-menu li.lab-menu{
+	display:block;
+	-moz-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.side-menu li.lab-menu a{
+	display:block;
+	text-align: left;
+    padding: 10px;
+    font-size: 0.9em;
+}
+.side-menu li.lab-menu:hover{
+	opacity: 0.7;
+	filter: alpha(opacity=70);
+	-ms-filter: "alpha( opacity=70 )";
+}
+
 .side-movie {
     margin: 0;
     overflow: hidden;
@@ -1316,7 +1340,7 @@ h3.popular-faq-title{
 /* Services Section */
 .services h2{
 	font-size: 1.6em;
-	color:#603813;
+	color:#000000;
 	margin-bottom:10px;
 }
 .services .services-inner {
@@ -2214,3 +2238,54 @@ ol.priv li{
 	display:list-item;
 }
 
+.lab-title{
+	height:70px;
+	overflow: hidden;
+}
+.lab-cat{
+	height:20px;
+}
+.lab-cat h5{
+	font-size:0.8em;
+}
+.lab-sngl{
+	padding:5px 15px;
+	font-size:1.6em;
+}
+
+.blog_detail-h-title{
+	font-weight:bold;
+	margin-top:10px;
+}
+
+/* popular posts */
+ul.popular-blog{
+	border: 1px solid #cccccc;
+    padding: 5px;
+}
+ul.popular-blog li{
+	border-bottom:1px dotted #CCCCCC;
+}
+ul.popular-blog li:last-child{
+	border-bottom:0;
+}
+ul.popular-blog table{
+	margin:0 0 10px;
+}
+ul.popular-blog td{
+	vertical-align:top;
+	font-size: 0.9em;
+}
+ul.popular-blog td a{
+	color: #000000;
+}
+ul.popular-blog td a:hover{
+	text-decoration:underline;
+}
+ul.popular-blog td.pp-img{
+	padding-right:5px;
+}
+ul.popular-blog td.pp-img img{
+	width:50px;
+	max-width:50px;
+}

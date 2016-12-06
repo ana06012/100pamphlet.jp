@@ -20,7 +20,7 @@ if ($arr === NULL) {
 		$designer_ids_pre[] = $arr["users"][$i]["id"];
 	}
 	shuffle($designer_ids_pre);
-	for($i=10;$i>=0;$i--){
+	for($i=12;$i>=0;$i--){
 		$designer_ids[] = $designer_ids_pre[$i];
 	}
 

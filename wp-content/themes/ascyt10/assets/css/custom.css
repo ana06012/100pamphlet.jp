@@ -403,6 +403,9 @@ table.contact-form input.wpcf7c-conf:-webkit-autofill {
 .mt-0{
 	margin-top:0px!important;
 }
+.mt-4{
+	margin-top:4px!important;
+}
 .mt-10{
 	margin-top:10px!important;
 }
@@ -516,6 +519,24 @@ img.img-center{
 .color-red{
 	color:#ff0000!important;
 }
+.color-lab_design{
+	color:#cc6666!important;
+}
+.color-lab_frame{
+	color:#4e263c!important;
+}
+.color-lab_howto{
+	color:#e9ae23!important;
+}
+.color-lab_print{
+	color:#37b38b!important;
+}
+.color-lab_sales{
+	color:#f97c1f!important;
+}
+.color-lab_others{
+	color:#b87029!important;
+}
 
 .bg-black{
 	background-color:#3e3e3e!important;
@@ -537,6 +558,24 @@ img.img-center{
 }
 .bg-orange-grad{
 	background: radial-gradient(#ff9148, #ff6600);
+}
+.bg-lab_design{
+	background-color:#cc6666!important;
+}
+.bg-lab_frame{
+	background-color:#4e263c!important;
+}
+.bg-lab_howto{
+	background-color:#e9ae23!important;
+}
+.bg-lab_print{
+	background-color:#37b38b!important;
+}
+.bg-lab_sales{
+	background-color:#f97c1f!important;
+}
+.bg-lab_others{
+	background-color:#b87029!important;
 }
 .white-box{
 	background-color:#FFFFFF;
@@ -632,6 +671,9 @@ img.img-center{
 	opacity: 0.7;
 	filter: alpha(opacity=70);
 	-ms-filter: "alpha( opacity=70 )";
+}
+.h130{
+	height:130px;
 }
 .bb-gray{
 	border-bottom:1px solid #CCCCCC;
@@ -744,8 +786,11 @@ a.orange-btn:hover,a.orange-btn.current,a.red-btn:hover,a.red-btn.current {
 	-ms-filter: "alpha( opacity=70 )";
 	text-decoration:none!important;
 }
-a.orange-btn img,a.orange-btn:hover img,a.red-btn img,a.red-btn:hover img{
+a.orange-btn img,a.orange-btn:hover img{
 	background-color:transparent;
+}
+a.red-btn img,a.red-btn:hover img{
+	background-color:#FF0000;
 }
 a.trans-btn:hover,.pages-block a.trans-btn:hover{
 	background-color:#FFFFFF;
@@ -815,6 +860,9 @@ nav.nav-main .sub-menu {
   list-style-image: none;
   border:1px solid #CCCCCC;
 }
+nav.nav-main li#menu-item-20 .sub-menu {
+	right:0;
+}
 nav.nav-main .sub-menu a {
   padding: 10px 12px;
   display: block;
@@ -847,7 +895,7 @@ img.main_visual{
 	max-width:920px;
 	width:920px;
 }
-#mv-visual {
+#mv-visual,#lab-visual {
     background-image: url(../../images/background/bg-main.jpg);
     width: 1500px;
     height:480px;
@@ -859,13 +907,19 @@ img.main_visual{
     clear: both;
     z-index: -1;
 }
-#mv-visual .main-txt{
+#mv-visual .main-txt,#lab-visual .main-txt{
 	width:100%;
 }
-#mv-visual .main-txt img{
+#mv-visual .main-txt img,#lab-visual .main-txt img{
 	display:block;
 	margin:auto;
 	padding-top:90px;
+}
+#mv-visual .main-txt.testb img{
+	padding-top:20px;
+}
+#lab-visual {
+	background-image: url(../../images/background/mv_img_1500x480.jpg);
 }
 
 /* pamph_page */

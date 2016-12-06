@@ -66,9 +66,9 @@ get_header(); ?>
 
 							$html_top_result .= '<div class="col-xs-6 col-sm-4">';
 							$html_top_result .= '<a href="'.get_the_permalink($post).'" ><img src="'.$image_url_hon.'" /></a>
-							<div class="result-box-150">
+							<div class="result-box-150 h130">
 								<span class="orange-icon"><a href="'.$post_type_link.'result/">'.$post_type_name.'</a></span><br>
-								<span class="black-icon"><a href="/pamph_tag/'.$pamph_terms_slug.'/">'.$pamph_terms_name.'</a></span><br>
+<!--								<span class="black-icon"><a href="/pamph_tag/'.$pamph_terms_slug.'/">'.$pamph_terms_name.'</a></span><br>-->
 							<a href="'.get_the_permalink($post).'" >'.get_the_title($post).'</a></div></div>';
 
 						endwhile;

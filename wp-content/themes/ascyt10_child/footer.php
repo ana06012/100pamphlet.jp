@@ -58,12 +58,6 @@
 <!-- Include jquery.min.js plugin -->
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/jquery-2.1.0.min.js"></script>
 
-<!-- Google Maps Script -->
-<script src="http://maps.google.com/maps/api/js?sensor=true"></script>
-
-<!-- Gmap3.js For Static Maps -->
-<script src="<?php echo get_template_directory_uri(); ?>/assets/js/gmap3.js"></script>
-
 <!-- Javascript Plugins  -->
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/plugins.js"></script>
 
