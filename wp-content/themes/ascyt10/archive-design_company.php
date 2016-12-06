@@ -7,7 +7,7 @@ $post_type_name = esc_html(get_post_type_object(get_post_type())->label );
 
 get_header();
 
-$page_id = 773; //表示したい固定ページのページID
+$page_id = 7734; //表示したい固定ページのページID
 $post = get_post( $page_id );
 
  ?>
